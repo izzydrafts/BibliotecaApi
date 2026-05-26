@@ -1,7 +1,15 @@
+using BibliotecaApi.Configurations;
+using BibliotecaApi.Repositories;
+using BibliotecaApi.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Adiciona serviços ao container
 builder.Services.AddControllers();
+builder.Services.Configure<MongoDbSettings>(
+    builder.Configuration.GetSection("MongoDbSettings"));
+    builder.Services.AddSingleton<LivroRepository>();
+    builder.Services.AddSingleton<LivroService>();
 
 // Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
