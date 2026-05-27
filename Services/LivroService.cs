@@ -16,5 +16,25 @@ namespace BibliotecaApi.Services
         {
             return await _livroRepository.GetAsync();
         }
+        public async Task CreateAsync(Livro novoLivro)
+        {
+        await _livroRepository.CreateAsync(novoLivro);
+        }
+        public async Task<Livro?> GetByIdAsync(string id)
+        {
+        return await _livroRepository.GetByIdAsync(id);
+        }
+
+        public async Task UpdateAsync(string id, Livro livroAtualizado)
+        {
+        await _livroRepository.UpdateAsync(id, livroAtualizado);
+        }
+
+        public async Task RemoveAsync(string id)
+        {
+        await _livroRepository.RemoveAsync(id);
+        }
+
     }
+
 }

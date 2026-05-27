@@ -22,5 +22,18 @@ namespace BibliotecaApi.Repositories
 
          public async Task<List<Livro>> GetAsync() =>
             await _livrosCollection.Find(_ => true).ToListAsync();
+            public async Task CreateAsync(Livro novoLivro) =>
+            await _livrosCollection.InsertOneAsync(novoLivro);
+
+            public async Task<Livro?> GetByIdAsync(string id) =>
+            await _livrosCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+    
+            public async Task UpdateAsync(string id, Livro livroAtualizado) =>
+            await _livrosCollection.ReplaceOneAsync(x => x.Id == id, livroAtualizado);
+            
+            public async Task RemoveAsync(string id) =>
+        await _livrosCollection.DeleteOneAsync(x => x.Id == id);
     }
+    
+    
 }
