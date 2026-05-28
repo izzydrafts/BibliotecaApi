@@ -4,25 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Sistema Biblioteca</h1>
+    <nav class="navbar">
+        <h1>Lumina Biblioteca</h1>
+    </nav>
+    
+    <div class="container">
 
-    <h2>Cadastrar Livro</h2>
+        <h2>Cadastrar Livro</h2>
 
-    <input type="text" id="titulo" placeholder="Título">
-    <input type="text" id="autor" placeholder="Autor">
-    <input type="text" id="genero" placeholder="Gênero">
-    <input type="number" id="quantidade" placeholder="Quantidade">
+        <input type="text" id="titulo" placeholder="Título">
 
-    <button onclick="cadastrarLivro()">
-        Cadastrar
-    </button>
+        <input type="text" id="autor" placeholder="Autor">
 
-    <h2>Lista de Livros</h2>
+        <input type="text" id="genero" placeholder="Gênero">
 
-    <ul id="listaLivros"></ul>
+        <input type="number" id="quantidade" placeholder="Quantidade">
+
+        <button onclick="cadastrarLivro()">
+            Cadastrar Livro
+        </button>
+
+        <h2>Lista de Livros</h2>
+
+        <ul id="listaLivros"></ul>
+
+    </div>
+
+    <footer class="footer">
+        <p>
+            Lumina Biblioteca © 2026
+        </p>
+
+        <p>
+            Desenvolvido por Isabelle Mendes
+        </p>
+    </footer>
 
     <script src="script.js"></script>
 

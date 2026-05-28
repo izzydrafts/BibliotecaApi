@@ -14,11 +14,16 @@ async function carregarLivros() {
 
         const item = document.createElement("li");
 
+        item.classList.add("card-livro");
+
         item.innerHTML = `
-            <strong>${livro.titulo}</strong>
-            - ${livro.autor}
-            - ${livro.genero}
-            - Quantidade: ${livro.quantidade}
+        <h3>${livro.titulo}</h3>
+
+        <p><strong>Autor:</strong> ${livro.autor}</p>
+
+        <p><strong>Gênero:</strong> ${livro.genero}</p>
+
+        <p><strong>Quantidade:</strong> ${livro.quantidade}</p>
         `;
 
         lista.appendChild(item);
