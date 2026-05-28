@@ -1,5 +1,7 @@
 const apiUrl = "http://localhost:5057/api/Livros";
 
+let livroEditandoId = null;
+
 async function carregarLivros() {
 
     const resposta = await fetch(apiUrl);
@@ -14,9 +16,7 @@ async function carregarLivros() {
 
         const item = document.createElement("li");
 
-        item.classList.add("card-livro");
-
-        item.innerHTML = `
+       item.innerHTML = `
         <h3>${livro.titulo}</h3>
 
         <p><strong>Autor:</strong> ${livro.autor}</p>
@@ -24,8 +24,23 @@ async function carregarLivros() {
         <p><strong>Gênero:</strong> ${livro.genero}</p>
 
         <p><strong>Quantidade:</strong> ${livro.quantidade}</p>
+
+        <div class="acoes">
+
+       <button class="btn-editar">
+            Editar
+        </button>
+
+        <button class="btn-excluir"
+            onclick="excluirLivro('${livro.id}')">
+            Excluir
+        </button>
+
+        </div>
         `;
 
+        item.querySelector(".btn-editar")
+        .addEventListener("click", () => editarLivro(livro));
         lista.appendChild(item);
     });
 }
@@ -39,20 +54,92 @@ async function cadastrarLivro() {
         quantidade: parseInt(document.getElementById("quantidade").value)
     };
 
-    await fetch(apiUrl, {
-        method: "POST",
+    console.log("ID EDITANDO:", livroEditandoId);
+    
+    if (livroEditandoId) {
+
+        const resposta = await fetch(`${apiUrl}/${livroEditandoId}`, {
+        method: "PUT",
         headers: {
-            "Content-Type": "application/json"
+        "Content-Type": "application/json"
         },
-        body: JSON.stringify(livro)
+
+        body: JSON.stringify({
+            id: livroEditandoId,
+            titulo: livro.titulo,
+            autor: livro.autor,
+            genero: livro.genero,
+            quantidade: livro.quantidade
+        })
+});
+
+console.log(resposta.status);
+
+        livroEditandoId = null;
+
+    } else {
+
+        await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(livro)
+        });
+    }
+
+    limparCampos();
+
+    carregarLivros();
+    
+    document.getElementById("listaLivros")
+    .scrollIntoView({
+    behavior: "smooth"
+    });
+}
+
+function editarLivro(livro) {
+
+    livroEditandoId = livro.id;
+
+    console.log("ID EDITANDO:", livroEditandoId);
+
+    document.getElementById("titulo").value = livro.titulo;
+
+    document.getElementById("autor").value = livro.autor;
+
+    document.getElementById("genero").value = livro.genero;
+
+    document.getElementById("quantidade").value = livro.quantidade;
+
+    document.getElementById("tituloFormulario")
+    .innerText = "Editando Livro";
+
+    window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+    });
+}
+
+function limparCampos() {
+
+    document.getElementById("titulo").value = "";
+
+    document.getElementById("autor").value = "";
+
+    document.getElementById("genero").value = "";
+
+    document.getElementById("quantidade").value = "";
+
+    document.getElementById("tituloFormulario")
+    .innerText = "Cadastrar Livro";
+}
+
+async function excluirLivro(id) {
+
+    await fetch(`${apiUrl}/${id}`, {
+        method: "DELETE"
     });
 
     carregarLivros();
-
-    document.getElementById("titulo").value = "";
-    document.getElementById("autor").value = "";
-    document.getElementById("genero").value = "";
-    document.getElementById("quantidade").value = "";
 }
-
-carregarLivros();
