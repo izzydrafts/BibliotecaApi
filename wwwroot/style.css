@@ -181,3 +181,72 @@ li {
     transform: translateY(-5px);
     box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
+
+.secao {
+    display: none;
+}
+
+.secao.ativa {
+    display: block;
+}
+#inicio {
+    min-height: 70vh;
+    background: #dff8f3;
+
+    padding: 50px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+#inicio h2 {
+    color: #5c4033;
+    font-size: 28px;
+}
+
+#inicio p {
+    color: #6b7280;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.secao {
+    margin-top: 30px;
+}
+.logo-lumina {
+    width: 280px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto 25px auto;
+}
+#tituloFormulario {
+    color: #5C4033;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+#livros h2:first-of-type {
+    color: #ffd670;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#livros p {
+    color: #6B7280;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+.titulo-lista {
+    color: #5C4033;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+}

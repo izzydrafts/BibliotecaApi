@@ -2,6 +2,20 @@ const apiUrl = "http://localhost:5057/api/Livros";
 
 let livroEditandoId = null;
 
+function mostrarSecao(secaoId) {
+    document.querySelectorAll(".secao").forEach(secao => {
+        secao.classList.remove("ativa");
+    });
+
+    const secaoEscolhida = document.getElementById(secaoId);
+
+    secaoEscolhida.classList.add("ativa");
+
+    secaoEscolhida.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
 async function carregarLivros() {
 
     const resposta = await fetch(apiUrl);
