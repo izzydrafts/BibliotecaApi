@@ -2,7 +2,6 @@ using BibliotecaApi.Configurations;
 using BibliotecaApi.Data;
 using BibliotecaApi.Repositories;
 using BibliotecaApi.Services;
-using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,15 +21,7 @@ builder.Services.AddScoped<EmprestimoService>();
 
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
-{
-    options.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "Lumina Biblioteca API",
-        Version = "v1",
-        Description = "API REST para gerenciamento de livros e empréstimos usando ASP.NET Core e MongoDB."
-    });
-});
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -51,3 +42,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
