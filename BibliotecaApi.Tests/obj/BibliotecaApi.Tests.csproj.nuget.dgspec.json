@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\BibliotecaApi.Tests.csproj": {}
+    "c:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\BibliotecaApi.Tests.csproj": {}
   },
   "projects": {
     "C:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.csproj": {
@@ -44,6 +44,10 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[10.0.8, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[10.0.7, )"
@@ -494,14 +498,14 @@
         }
       }
     },
-    "C:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\BibliotecaApi.Tests.csproj": {
+    "c:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\BibliotecaApi.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\BibliotecaApi.Tests.csproj",
+        "projectUniqueName": "c:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\BibliotecaApi.Tests.csproj",
         "projectName": "BibliotecaApi.Tests",
-        "projectPath": "C:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\BibliotecaApi.Tests.csproj",
+        "projectPath": "c:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\BibliotecaApi.Tests.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\obj\\",
+        "outputPath": "c:\\Users\\Acer\\Documents\\BibliotecaApi\\BibliotecaApi.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config"

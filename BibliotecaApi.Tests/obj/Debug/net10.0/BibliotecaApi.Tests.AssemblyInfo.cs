@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BibliotecaApi.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c17fb85e39b31e174656d0264cdf4c928ea62bd6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+774f005bd2000d23fdbfb77012b781aeb3514837")]
 [assembly: System.Reflection.AssemblyProductAttribute("BibliotecaApi.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BibliotecaApi.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
