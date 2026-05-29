@@ -12,4 +12,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="BibliotecaApi.Tests\**\*.cs" />
+    <Content Remove="BibliotecaApi.Tests\**\*" />
+    <None Remove="BibliotecaApi.Tests\**\*" />
+</ItemGroup>
+
 </Project>
