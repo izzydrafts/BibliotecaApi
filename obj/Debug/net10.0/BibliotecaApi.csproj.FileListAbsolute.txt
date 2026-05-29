@@ -42,6 +42,6 @@ C:\Users\Acer\Documents\BibliotecaApi\bin\Debug\net10.0\Snappier.dll
 C:\Users\Acer\Documents\BibliotecaApi\bin\Debug\net10.0\ZstdSharp.dll
 C:\Users\Acer\Documents\BibliotecaApi\obj\Debug\net10.0\BibliotecaApi.sourcelink.json
 C:\Users\Acer\Documents\BibliotecaApi\bin\Debug\net10.0\BibliotecaApi.staticwebassets.runtime.json
-C:\Users\Acer\Documents\BibliotecaApi\obj\Debug\net10.0\compressed\02nekfkorg-{0}-0ffd49v2yu-0ffd49v2yu.gz
 C:\Users\Acer\Documents\BibliotecaApi\obj\Debug\net10.0\compressed\5k21zsdxky-{0}-1etbun9z1v-1etbun9z1v.gz
 C:\Users\Acer\Documents\BibliotecaApi\obj\Debug\net10.0\compressed\5zmcp0fw5q-{0}-1pc797dsvs-1pc797dsvs.gz
+C:\Users\Acer\Documents\BibliotecaApi\obj\Debug\net10.0\compressed\02nekfkorg-{0}-38ol4kqy9w-38ol4kqy9w.gz
