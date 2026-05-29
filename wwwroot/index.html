@@ -54,15 +54,28 @@
         </section>
 
         <section id="emprestimos" class="secao">
-            <h2>Empréstimos</h2>
-            <p>
-                Área destinada ao controle dos empréstimos realizados pelos usuários da biblioteca.
-            </p>
-            <p>
-                Aqui será possível cadastrar, listar e acompanhar os empréstimos dos livros.
-            </p>
-        </section>
 
+            <h2>Empréstimos</h2>
+                <p>Cadastre e acompanhe os empréstimos realizados na biblioteca.</p>
+
+            <h3 id="tituloFormularioEmprestimo">Registrar Empréstimo</h3>
+
+            <input type="text" id="nomeUsuarioEmprestimo" placeholder="Nome do usuário">
+                <select id="livroIdEmprestimo">
+                    <option value="">Selecione um livro</option>
+                </select>
+            <input type="date" id="dataEmprestimo">
+            <input type="date" id="dataDevolucao">
+
+            <button onclick="cadastrarEmprestimo()" id="btnSalvarEmprestimo">
+                Registrar Empréstimo
+            </button>
+
+            <h2 class="titulo-lista">Lista de Empréstimos</h2>
+
+            <ul id="listaEmprestimos"></ul>
+
+        </section>
     </main>
 
     <footer class="footer">
