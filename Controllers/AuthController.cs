@@ -1,6 +1,7 @@
 using BibliotecaApi.DTOs;
 using BibliotecaApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BibliotecaApi.Controllers;
 
@@ -52,4 +53,12 @@ public class AuthController : ControllerBase
             usuario.Perfil
         });
     }
+
+    [Authorize]
+[HttpGet("perfil")]
+public IActionResult Perfil()
+{
+    return Ok("Acesso autorizado com JWT.");
+}
+
 }

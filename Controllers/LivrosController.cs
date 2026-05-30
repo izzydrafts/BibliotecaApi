@@ -1,6 +1,7 @@
 using BibliotecaApi.Models;
 using BibliotecaApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BibliotecaApi.Controllers
 {
@@ -44,37 +45,39 @@ namespace BibliotecaApi.Controllers
             return Ok(livro);
         }
     
-    [HttpPut("{id:length(24)}")]
-    public async Task<IActionResult> Update(string id, Livro livroAtualizado)
-    {
+        [HttpPut("{id:length(24)}")]
+        public async Task<IActionResult> Update(string id, Livro livroAtualizado)
+        {
+            var livro = await _livroService.GetByIdAsync(id);
+
+            if (livro is null)
+            {
+                return NotFound();
+            }
+
+            livroAtualizado.Id = livro.Id;
+
+            await _livroService.UpdateAsync(id, livroAtualizado);
+
+            return NoContent();
+        }
+    
+        [Authorize(Roles = "admin")]
+        [HttpDelete("{id:length(24)}")]  
+        public async Task<IActionResult> Delete(string id)
+        {
         var livro = await _livroService.GetByIdAsync(id);
 
         if (livro is null)
         {
-        return NotFound();
+            return NotFound();
         }
 
-        livroAtualizado.Id = livro.Id;
-
-        await _livroService.UpdateAsync(id, livroAtualizado);
+        await _livroService.RemoveAsync(id);
 
         return NoContent();
-    }
-    
-    [HttpDelete("{id:length(24)}")]
-    public async Task<IActionResult> Delete(string id)
-    {
-    var livro = await _livroService.GetByIdAsync(id);
-
-    if (livro is null)
-    {
-        return NotFound();
-    }
-
-    await _livroService.RemoveAsync(id);
-
-    return NoContent();
-    }
+        }
     
     }
+
 }
